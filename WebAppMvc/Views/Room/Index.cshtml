@@ -1,0 +1,36 @@
+﻿@model IEnumerable<ClientPatientManagement.Core.Model.Room>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista de salas</h2>
+
+<table style='background:#EAB4B4; width: 100%;' border='1'>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Location</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id </td>
+                <td> @item.Name</td>
+                <td>@item.Location </td>
+                <td><a href="~/Room/Edit/@item.Id">EDITAR</a> -- <a href="~/Room/Delete/@item.Id">ELIMINAR</a></td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr></tr>
+    </tfoot>
+</table>
+    
+
+
+

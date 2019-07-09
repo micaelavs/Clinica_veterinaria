@@ -1,0 +1,31 @@
+﻿@model ClientPatientManagement.Core.Model.Room
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Eliminar una sala</title>
+</head>
+<body>
+    <h3>Está seguro que va a eliminar el elemento?</h3>
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                Nombre: @Model.Name
+            </dt>
+            <dt>
+               Localización: @Model.Location
+            </dt>
+        </dl>
+        <form method="post" action="/Room/Delete2">
+            <input type="hidden" name="Id" value="@Model.Id" /><br>
+            <input type="submit" name="Eliminar" value="Eliminar" />
+        </form>
+        <a href="~/Room/Index">VOLVER A LA LISTA PRINCIPAL</a>
+        
+
+    </div>
+</body>
+</html>

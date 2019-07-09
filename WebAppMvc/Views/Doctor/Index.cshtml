@@ -1,0 +1,40 @@
+﻿@model IEnumerable<ClientPatientManagement.Core.Model.Doctor>
+
+@{
+    ViewBag.Title = "Index";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Index</title>
+</head>
+<body>
+    <h2>Lista de Doctores</h2>
+    <table style='background:#DCDD83; width: 100%;' border='1'>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id </td>
+                    <td> @item.Name</td>
+                    <td>@item.Email </td>
+                    <td><a href="~/Doctor/Edit/@item.Id">EDITAR</a> -- <a href="~/Doctor/Delete/@item.Id">ELIMINAR</a></td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr></tr>
+        </tfoot>
+    </table>
+</body>
+</html>

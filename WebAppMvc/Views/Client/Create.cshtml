@@ -1,0 +1,28 @@
+﻿@model ClientPatientManagement.Core.Model.Client
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<!DOCTYPE html>
+
+<h2>Alta Clientes</h2>
+
+<html>
+<head>
+
+    <title>Alta Clientes</title>
+</head>
+<body>
+
+    <form method="post" action="/Client/Create">
+        <h1>Formulario Alta Clientes</h1>
+
+        <label>Nombre completo</label>
+        <input type="text" name="FullName" /><br>
+        <label>Email</label>
+        <input type="text" name="Email" /><br>
+        <input type="submit" name="Crear" value="Crear" />
+    </form>
+</body>
+</html>

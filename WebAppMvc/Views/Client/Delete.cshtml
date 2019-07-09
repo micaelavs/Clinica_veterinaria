@@ -1,0 +1,32 @@
+﻿@model ClientPatientManagement.Core.Model.Client
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Eliminar un cliente</title>
+</head>
+<body>
+    <h3>Está seguro que va a eliminar el cliente?</h3>
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                Nombre: @Model.FullName
+            </dt>
+            <dt>
+                Email: @Model.Email
+            </dt>
+        </dl>
+
+        <form method="post" action="/Client/Delete2">
+            <input type="hidden" name="Id" value="@Model.Id" /><br>
+            <input type="submit" name="Eliminar" value="Eliminar" />
+        </form>
+        <a href="~/Client/Index">VOLVER A LA LISTA PRINCIPAL</a>
+
+
+    </div>
+</body>
+</html>

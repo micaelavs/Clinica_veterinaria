@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+    <header>        
+        <img src="~/Content/Images/logo.gif" width="189" height="57" alt="logo" />        
+        <nav>
+            <a href="/home/about/">About</a>
+        </nav>
+    </header>
+    <section>
+        @RenderBody()
+    </section>
+    <aside>
+        <p>Contenido Relacionado  (aside)</p>
+    </aside>
+    <!-- Pie de pagina -->
+    <footer>
+        <a href="#">footer - ¿Hay vida en otros planetas? - 2019</a>
+    </footer>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
