@@ -1,29 +1,42 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
+    <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
+    <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
 
     <link href="~/Content/Site.css" rel="stylesheet" />
+    <style>
+    
+        </style>
 </head>
 <body>
     <header>        
         <img src="~/Content/Images/logo.gif" width="189" height="57" alt="logo" />        
         <nav>
-            <a href="/home/about/">About</a>
+            <a href="/Home/Index">Home</a> | <a href="/Room/">Salas</a> |  <a href="/Patient/">Patientes</a> |  <a href="/Client/">Clientes</a> |  <a href="/Doctor/">Doctores</a>
         </nav>
     </header>
     <section>
         @RenderBody()
     </section>
     <aside>
-        <p>Contenido Relacionado  (aside)</p>
+        <p>Mirá las últimas noticias</p>
     </aside>
     <!-- Pie de pagina -->
     <footer>
-        <a href="#">footer - ¿Hay vida en otros planetas? - 2019</a>
+          <div class="direccion">
+                    <div class="titulo"><strong>VET</strong> CLÍNICA VETERINARIA</div>
+                    <p class="dir">Av. de Mayo 2186 - Buenos Aires</p>
+                    <p class="tel"><i class="fal fa-phone"></i>46775-444</p>
+                </div>
+                <div class="diseno">
+                    <p>2019 - VET Veterinaria <br> Todos los derechos reservados <br> <a href="" target="_blank">www.vet.com.ar</a></p>
+                </div>
     </footer>
     @RenderSection("scripts", required: false)
 </body>

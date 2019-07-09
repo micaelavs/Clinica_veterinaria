@@ -26,7 +26,7 @@ textarea {
     max-width: 280px;
 }
 
-
+/********************/
 
 
 header {
@@ -37,7 +37,7 @@ header {
 }
 section {
 	width: 79%;
-	background: #ccc;
+	background: #f1f1f1;
 	float: left;
 	overflow: auto;
 	padding-bottom: 60px;
@@ -52,13 +52,53 @@ aside {
 	/*Si quisieramos ocultar el contenido relacionado pondriamos visibility a hidden*/
 	/*visibility: hidden;*/
 }
+footer p {
+          line-height: normal;
+          margin: 0;
+        }
+footer .direccion {
+          float: left;
+          font-size: 12px;
+          margin: 22px 0 0 75px;
+          width: 270px;
+        }
+footer p.tel{
+          background: url("../images/icono-telefono-pie.jpg") no-repeat scroll left center rgba(0, 0, 0, 0);
+          padding: 2px 0 2px 15px;
+        }
+ footer p.dir {
+          background: url("../images/icono-direccion-pie.jpg") no-repeat scroll left center rgba(0, 0, 0, 0);
+          padding: 2px 0 2px 15px;
+        }
+  footer .diseno {
+          float: right;
+          font-family: Lato;
+          font-size: 10px;
+          font-weight: 300;
+          margin: 30px 57px;
+        }
+        footer .diseno p {
+          float: left;
+          margin: 0 35px 5px;
+        }
+        footer .diseno a {
+          color: #FFF;
+          text-decoration: none;
+        }
+        footer .diseno a:hover{
+	        text-decoration:underline;
+        }
+        footer .diseno {
+          float: right;
+        }
+/******************/
 footer {
 	position: relative;
 	margin-top: -50px;
-	height: 40px; 
+	height: 100px; 
 	padding:5px 0px;
 	clear: both;
-	background: #286af0;
+	background: none repeat scroll 0 0 #ff5733;
 	text-align: center;
 	color: #fff;
 }
