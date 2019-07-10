@@ -6,9 +6,16 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Eliminar una sala</title>
+    <style>
+    
+    a:hover{
+    text-decoration:underline !important;
+    }
+    
+    </style>
 </head>
 <body>
-    <h3>Está seguro que va a eliminar el elemento?</h3>
+    <h3>Está seguro de eliminar la sala?</h3>
     <div>
         <hr />
         <dl class="dl-horizontal">
@@ -21,9 +28,10 @@
         </dl>
         <form method="post" action="/Room/Delete2">
             <input type="hidden" name="Id" value="@Model.Id" /><br>
-            <input type="submit" name="Eliminar" value="Eliminar" />
+            <input style= "border: 1px solid black; border-radius: 5px; width:264px;" type="submit" name="Eliminar" value="Eliminar" />
         </form>
-        <a href="~/Room/Index">VOLVER A LA LISTA PRINCIPAL</a>
+        <br />
+        <a class="linki" style="font-weight:200; border-radius: 5px; background:#ffd274; text-decoration: none; color: black;" href="~/Room/Index">VOLVER A LA LISTA PRINCIPAL</a>
         
 
     </div>

@@ -1,18 +1,18 @@
 ﻿@model ClientPatientManagement.Core.Model.Room
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "";
 }
 
-<h2>Edit</h2>
+<h2></h2>
 
-<form method="post" action="/Room/Edit">
-    <h1>Formulario Editar</h1>
+<form style="background:#ffd274;" method="post" action="/Room/Edit">
+    <h1>Editar Sala</h1>
   
     <input type="hidden" name="Id" value="@Model.Id" /><br> 
-    <label>Name</label>
-    <input type="text" name="Name" value="@Model.Name"/><br>
-    <label>Location</label>
-    <input type="text" name="Location" value="@Model.Location"/><br>
-    <input type="submit" name="Editar" value="Editar" />
+    <label>Nombre</label>
+    <input style="margin-left:30px;" type="text" name="Name" value="@Model.Name"/><br><br>
+    <label>Localización</label>
+    <input type="text" name="Location" value="@Model.Location"/><br><br />
+    <input style= "border: 1px solid black; border-radius: 5px; width:264px;" type="submit" name="Editar" value="Editar" />
 </form>
 

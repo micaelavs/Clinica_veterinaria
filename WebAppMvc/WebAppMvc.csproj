@@ -178,8 +178,10 @@
     </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\curso.png" />
     <Content Include="Content\Images\expansion-hubble.jpg" />
     <Content Include="Content\Images\logo.gif" />
+    <Content Include="Content\Images\principal.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

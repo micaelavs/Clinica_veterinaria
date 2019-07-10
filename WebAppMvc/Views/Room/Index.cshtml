@@ -5,13 +5,13 @@
 
 <h2>Lista de salas</h2>
 
-<table style='background:#EAB4B4; width: 100%;' border='1'>
+<table style='background:#ffd274; width: 100%;'>
     <thead>
         <tr>
-            <th>Id</th>
-            <th>Nombre</th>
-            <th>Location</th>
-            <th></th>
+            <th style="text-align:left; border-bottom: 1px solid black;">Código</th>
+            <th style="text-align:left;  border-bottom: 1px solid black;"">Nombre</th>
+            <th style="text-align:left;  border-bottom: 1px solid black;"">Localización</th>
+            <th style="text-align:left;  border-bottom: 1px solid black;"">Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -22,7 +22,7 @@
                 <td>@item.Id </td>
                 <td> @item.Name</td>
                 <td>@item.Location </td>
-                <td><a href="~/Room/Edit/@item.Id">EDITAR</a> -- <a href="~/Room/Delete/@item.Id">ELIMINAR</a></td>
+                <td><a style="color: black;" href="~/Room/Edit/@item.Id">EDITAR</a> -- <a style="color: black; " href="~/Room/Delete/@item.Id">ELIMINAR</a></td>
             </tr>
         }
     </tbody>
