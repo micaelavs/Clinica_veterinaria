@@ -1,24 +1,25 @@
 ﻿@model ClientPatientManagement.Core.Model.Doctor
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Editar un Doctor";
 }
 <!DOCTYPE html>
 
 <html>
 <head>
-    <title>Editar Doctor</title>
+    <title>Editar un Doctor</title>
 </head>
 <body>
     <form method="post" action="/Doctor/Edit">
         <h1>Formulario Editar</h1>
 
         <input type="hidden" name="Id" value="@Model.Id" /><br>
-        <label>Name</label>
+        <label>Nombre</label>
         <input type="text" name="Name" value="@Model.Name" /><br>
         <label>Email</label>
-        <input type="text" name="Email" value="@Model.Email" /><br>
-        <input type="submit" name="Editar" value="Editar" />
+        <input  type="text" name="Email" value="@Model.Email" /><br><br />
+        <input style= "border: 1px solid black; border-radius: 5px; width:264px;" type="submit" name="Editar" value="Editar" />
     </form>
-    <a href="~/Doctor/Index">VOLVER A LA LISTA PRINCIPAL</a>
+    <br />
+    <a class="linki" style="font-weight:200; border-radius: 5px; background:#ffd274; text-decoration: none; color: black;" href="~/Doctor/Index">VOLVER A LA LISTA PRINCIPAL</a>
 </body>
 </html>

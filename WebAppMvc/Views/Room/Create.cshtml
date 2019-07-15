@@ -1,43 +1,19 @@
 ﻿@model ClientPatientManagement.Core.Model.Room
-
 @{
-    ViewBag.Title = "Dar de alta una sala";
+    ViewBag.Title = "Alta de salas";
 }
 
-<h2>Dar de alta una sala</h2>
+<h2></h2>
 
-@using (Html.BeginForm()) 
-{
-    
-    
-    <div class="form-horizontal">
-        <h4>Room</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-            </div>
-        </div>
+<form style="background:#ffd274;" method="post" action="/Room/Create">
+    <h1>Dar de alta una Sala</h1>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Location, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Location, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Location, "", new { @class = "text-danger" })
-            </div>
-        </div>
+    <label>Nombre</label>
+    <input style="margin-left:30px;" type="text" name="Name" /><br><br>
+    <label>Localización</label>
+    <input type="text" name="Location" /><br><br />
+    <input style="border: 1px solid black; border-radius: 5px; width:264px;" type="submit" name="Alta" value="Dar de alta" />
+</form>
+<br />
+<a style="font-weight:200; border-radius: 5px; background:#ffd274; text-decoration: none; color: black;" href="~/Room/Index">VOLVER A LA LISTA PRINCIPAL</a>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Dar de Alta Sala" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
-}
-
-<div>
-    @Html.ActionLink("Volver al listado", "Index")
-</div>

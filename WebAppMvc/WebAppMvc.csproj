@@ -172,9 +172,9 @@
     <Compile Include="SharedKernel\Gender.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\aspnet-WebApp.mdf" />
-    <Content Include="App_Data\aspnet-WebApp_log.ldf">
-      <DependentUpon>aspnet-WebApp.mdf</DependentUpon>
+    <Content Include="App_Data\vet.mdf" />
+    <Content Include="App_Data\vet_log.ldf">
+      <DependentUpon>vet.mdf</DependentUpon>
     </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />

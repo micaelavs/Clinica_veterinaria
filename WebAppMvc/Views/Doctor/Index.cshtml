@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<ClientPatientManagement.Core.Model.Doctor>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Listado Doctores";
 }
 <!DOCTYPE html>
 
@@ -11,13 +11,13 @@
 </head>
 <body>
     <h2>Lista de Doctores</h2>
-    <table style='background:#DCDD83; width: 100%;' border='1'>
+    <table style='background:#ffd274; width: 100%;'>
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Nombre</th>
-                <th>Email</th>
-                <th></th>
+                <th style="text-align:left;  border-bottom: 1px solid black;">Código</th>
+                <th style="text-align:left;  border-bottom: 1px solid black;">Nombre</th>
+                <th style="text-align:left;  border-bottom: 1px solid black;">Email</th>
+                <th style="text-align:left;  border-bottom: 1px solid black;"></th>
             </tr>
         </thead>
         <tbody>
@@ -28,7 +28,7 @@
                     <td>@item.Id </td>
                     <td> @item.Name</td>
                     <td>@item.Email </td>
-                    <td><a href="~/Doctor/Edit/@item.Id">EDITAR</a> -- <a href="~/Doctor/Delete/@item.Id">ELIMINAR</a></td>
+                    <td><a style="color: black;" href="~/Doctor/Edit/@item.Id">EDITAR</a> -- <a style="color: black;" href="~/Doctor/Delete/@item.Id">ELIMINAR</a></td>
                 </tr>
             }
         </tbody>
@@ -36,5 +36,7 @@
             <tr></tr>
         </tfoot>
     </table>
+    <br />
+    <a class="linki" style="font-weight:200; border-radius: 5px; background:#ffd274; text-decoration: none; color: black;" href="~/Doctor/Create">DAR DE ALTA UN DOCTOR</a>
 </body>
 </html>

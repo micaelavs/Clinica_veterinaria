@@ -1,28 +1,21 @@
 ﻿@model ClientPatientManagement.Core.Model.Doctor
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Alta doctor";
 }
 
 <!DOCTYPE html>
 
-<h2>Create</h2>
-
-<html>
-<head>
-    
-    <title>Alta Doctores</title>
-</head>
-<body>
- 
-    <form method="post" action="/Doctor/Create">
+<h2></h2>
+    <form style="background:#ffd274;" method="post" action="/Doctor/Create">
         <h1>Formulario Alta Doctores</h1>
 
-        <label>Name</label>
-        <input type="text" name="Name" /><br>
-        <label>Location</label>
-        <input type="text" name="Email"  /><br>
-        <input type="submit" name="Crear" value="Crear" />
+        <label>Nombre</label>
+        <input type="text" name="Name" /><br><br />
+        <label>Email </label>
+        <input style="margin-left:17px;" type="text" name="Email"  /><br> <br />
+        <input style="border: 1px solid black; border-radius: 5px; width:264px;" type="submit" name="Crear" value="Dar de alta" />
     </form>
-</body>
-</html>
+    <br />
+    <a style="font-weight:200; border-radius: 5px; background:#ffd274; text-decoration: none; color: black;" href="~/Doctor/Index">VOLVER A LA LISTA PRINCIPAL</a>
+
