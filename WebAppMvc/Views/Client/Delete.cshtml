@@ -6,10 +6,15 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Eliminar un cliente</title>
+    <style>
+        a:hover {
+            text-decoration: underline !important;
+        }
+    </style>
 </head>
 <body>
     <h3>Está seguro que va a eliminar el cliente?</h3>
-    <div>
+    <div style="background:#ffd274;">
         <hr />
         <dl class="dl-horizontal">
             <dt>
@@ -22,9 +27,10 @@
 
         <form method="post" action="/Client/Delete2">
             <input type="hidden" name="Id" value="@Model.Id" /><br>
-            <input type="submit" name="Eliminar" value="Eliminar" />
+            <input style= "border: 1px solid black; border-radius: 5px; width:264px;" type="submit" name="Eliminar" value="Eliminar" />
         </form>
-        <a href="~/Client/Index">VOLVER A LA LISTA PRINCIPAL</a>
+        <br />
+        <a class="linki" style="font-weight:200; border-radius: 5px; background:#ffd274; text-decoration: none; color: black;" href="~/Client/Index">VOLVER A LA LISTA PRINCIPAL</a>
 
 
     </div>

@@ -9,16 +9,17 @@
     <title>Editar Cliente</title>
 </head>
 <body>
-    <form method="post" action="/Client/Edit">
-        <h1>Formulario Editar</h1>
+    <form style="background:#ffd274;" method="post" action="/Client/Edit">
+        <h1>Editar Cliente</h1>
 
         <input type="hidden" name="Id" value="@Model.Id" /><br>
         <label>Nombre completo</label>
-        <input type="text" name="FullName" value="@Model.FullName" /><br>
+        <input type="text" name="FullName" value="@Model.FullName" /><br><br />
         <label>Email</label>
-        <input type="text" name="Email" value="@Model.Email" /><br>
-        <input type="submit" name="Editar" value="Editar" />
+        <input style="margin-left: 87px;" type="text" name="Email" value="@Model.Email" /><br><br>
+        <input style= "border: 1px solid black; border-radius: 5px; width:264px;" type="submit" name="Editar" value="Editar" />
     </form>
-    <a href="~/Client/Index">VOLVER A LA LISTA PRINCIPAL</a>
+    <br />
+    <a class="linki" style="font-weight:200; border-radius: 5px; background:#ffd274; text-decoration: none; color: black;" href="~/Client/Index">VOLVER A LA LISTA PRINCIPAL</a>
 </body>
 </html>
