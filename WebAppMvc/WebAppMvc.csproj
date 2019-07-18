@@ -133,10 +133,12 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PatientsController.cs" />
     <Compile Include="Controllers\RoomController.cs" />
+    <Compile Include="Controllers\TurnoesController.cs" />
     <Compile Include="Data\ClientData.cs" />
     <Compile Include="Data\DoctorData.cs" />
     <Compile Include="Data\PatientData.cs" />
     <Compile Include="Data\RoomData.cs" />
+    <Compile Include="Data\TurnoData.cs" />
     <Compile Include="Data\VetDbContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -162,6 +164,10 @@
     <Compile Include="Migrations\201906211934576_Initial-Create4.cs" />
     <Compile Include="Migrations\201906211934576_Initial-Create4.Designer.cs">
       <DependentUpon>201906211934576_Initial-Create4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907181808512_Initial_Create_turnos.cs" />
+    <Compile Include="Migrations\201907181808512_Initial_Create_turnos.Designer.cs">
+      <DependentUpon>201907181808512_Initial_Create_turnos.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Client.cs" />
@@ -235,6 +241,11 @@
     <Content Include="Views\Patients\Details.cshtml" />
     <Content Include="Views\Patients\Edit.cshtml" />
     <Content Include="Views\Patients\Index.cshtml" />
+    <Content Include="Views\Turnoes\Create.cshtml" />
+    <Content Include="Views\Turnoes\Delete.cshtml" />
+    <Content Include="Views\Turnoes\Details.cshtml" />
+    <Content Include="Views\Turnoes\Edit.cshtml" />
+    <Content Include="Views\Turnoes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -260,6 +271,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906211934576_Initial-Create4.resx">
       <DependentUpon>201906211934576_Initial-Create4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907181808512_Initial_Create_turnos.resx">
+      <DependentUpon>201907181808512_Initial_Create_turnos.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

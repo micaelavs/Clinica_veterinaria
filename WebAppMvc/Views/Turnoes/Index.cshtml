@@ -1,0 +1,64 @@
+﻿@model IEnumerable<WebAppMvc.Models.Turno>
+
+@{
+    ViewBag.Title = "Listado Turnos";
+}
+
+<h2>Listado de Turnos</h2>
+
+<table style='background:#ffd274; width: 100%;' class="table">
+    <thead>
+        <tr>
+            <th style="text-align:left; border-bottom: 1px solid black";>
+                Doctor
+            </th>
+            <th style="text-align:left; border-bottom: 1px solid black;">
+                Paciente
+            </th>
+            <th style="text-align:left; border-bottom: 1px solid black;">
+                Sala
+            </th>
+            <th style="text-align:left; border-bottom: 1px solid black;">
+                Especialidad
+            </th>
+            <th style="text-align:left; border-bottom: 1px solid black;">
+                Fecha
+            </th>
+            <th style="text-align:left; border-bottom: 1px solid black;">
+                Hora
+            </th>
+            <th style="text-align:left; border-bottom: 1px solid black;">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Doctor.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Paciente.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sala.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TipoEspecialidad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fecha)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hora)
+                </td>
+                <td><a style="color: black;" href="~/Turnoes/Edit/@item.Id">EDITAR</a> -- <a style="color: black;" href="~/Turnoes/Delete/@item.Id">ELIMINAR</a></td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr></tr>
+    </tfoot>
+</table>
+<br />
+<a class="linki" style="font-weight:200; border-radius: 5px; background:#ffd274; text-decoration: none; color: black;" href="~/Turnoes/Create">DAR DE ALTA UN TURNO</a>
