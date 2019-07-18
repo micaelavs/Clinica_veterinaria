@@ -13,4 +13,5 @@ namespace SharedKernel.Enums
         Modified = 2,
         Deleted = 3
     }
+
 }
