@@ -6,118 +6,117 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using ClientPatientManagement.Core.Model;
 using WebAppMvc.Data;
+using WebAppMvc.Models;
 
 namespace WebAppMvc.Controllers
 {
-    public class PatientsController : Controller
+    public class FacturasController : Controller
     {
         private VetDbContext db = new VetDbContext();
 
-        // GET: Patients
+        // GET: Facturas
         public ActionResult Index()
         {
-            var patients = db.Patients.Include(p => p.Owner);
-            return View(patients.ToList());
+            var facturas = db.Facturas.Include(f => f.Turno);
+            return View(facturas.ToList());
         }
 
-        // GET: Patients/Details/5
+        // GET: Facturas/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Patient patient = db.Patients.Find(id);
-            if (patient == null)
+            Factura factura = db.Facturas.Find(id);
+            if (factura == null)
             {
                 return HttpNotFound();
             }
-            return View(patient);
+            return View(factura);
         }
 
-        // GET: Patients/Create
+        // GET: Facturas/Create
         public ActionResult Create()
         {
-            ViewBag.ClientId = new SelectList(db.Clients, "Id", "FullName");
+            ViewBag.IdTurno = new SelectList(db.Turnos, "Id", "Id");
             return View();
         }
 
-        // POST: Patients/Create
+        // POST: Facturas/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,ClientId,Name,Gender")] Patient patient)
+        public ActionResult Create([Bind(Include = "Id,Fecha,IdTurno,Monto")] Factura factura)
         {
             if (ModelState.IsValid)
             {
-                db.Patients.Add(patient);
+                db.Facturas.Add(factura);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ClientId = new SelectList(db.Clients, "Id", "FullName", patient.ClientId);
-            return View(patient);
+            ViewBag.IdTurno = new SelectList(db.Turnos, "Id", "Id", factura.IdTurno);
+            return View(factura);
         }
 
-        // GET: Patients/Edit/5
+        // GET: Facturas/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Patient patient = db.Patients.Find(id);
-            if (patient == null)
+            Factura factura = db.Facturas.Find(id);
+            if (factura == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.ClientId = new SelectList(db.Clients, "Id", "FullName", patient.ClientId);
-            return View(patient);
+            ViewBag.IdTurno = new SelectList(db.Turnos, "Id", "Id", factura.IdTurno);
+            return View(factura);
         }
 
-        // POST: Patients/Edit/5
+        // POST: Facturas/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,ClientId,Name,Gender")] Patient patient)
+        public ActionResult Edit([Bind(Include = "Id,Fecha,IdTurno,Monto")] Factura factura)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(patient).State = EntityState.Modified;
+                db.Entry(factura).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ClientId = new SelectList(db.Clients, "Id", "FullName", patient.ClientId);
-            return View(patient);
+            ViewBag.IdTurno = new SelectList(db.Turnos, "Id", "Id", factura.IdTurno);
+            return View(factura);
         }
 
-        // GET: Patients/Delete/5
+        // GET: Facturas/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Patient patient = db.Patients.Find(id);
-            patient.Owner = db.Clients.Find(patient.ClientId);
-            if (patient == null)
+            Factura factura = db.Facturas.Find(id);
+            if (factura == null)
             {
                 return HttpNotFound();
             }
-            return View(patient);
+            return View(factura);
         }
 
-        // POST: Patients/Delete/5
+        // POST: Facturas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Patient patient = db.Patients.Find(id);
-            db.Patients.Remove(patient);
+            Factura factura = db.Facturas.Find(id);
+            db.Facturas.Remove(factura);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

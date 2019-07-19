@@ -10,7 +10,7 @@ namespace ClientPatientManagement.Core.Model
         }
 
         public int Id { get; set; }
-        public Client Owner { get; private set; }
+        public Client Owner { get;  set; }
         public int ClientId { get; set; }
         public string Name { get; set; }
         public Gender Gender { get; set; }

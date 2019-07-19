@@ -20,5 +20,7 @@ namespace WebAppMvc.Data
         public DbSet<Patient> Patients { get; set; }
         public DbSet<Doctor> Doctors { get; set; }
         public DbSet<Turno> Turnos { get; set; }
+
+        public DbSet<Factura> Facturas { get; set; }
     }
 }

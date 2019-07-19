@@ -130,12 +130,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\DoctorController.cs" />
+    <Compile Include="Controllers\FacturasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PatientsController.cs" />
     <Compile Include="Controllers\RoomController.cs" />
     <Compile Include="Controllers\TurnoesController.cs" />
     <Compile Include="Data\ClientData.cs" />
     <Compile Include="Data\DoctorData.cs" />
+    <Compile Include="Data\FacturaData.cs" />
     <Compile Include="Data\PatientData.cs" />
     <Compile Include="Data\RoomData.cs" />
     <Compile Include="Data\TurnoData.cs" />
@@ -169,9 +171,14 @@
     <Compile Include="Migrations\201907181808512_Initial_Create_turnos.Designer.cs">
       <DependentUpon>201907181808512_Initial_Create_turnos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907182324491_Initial_create_factura.cs" />
+    <Compile Include="Migrations\201907182324491_Initial_create_factura.Designer.cs">
+      <DependentUpon>201907182324491_Initial_create_factura.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\Doctor.cs" />
+    <Compile Include="Models\Factura.cs" />
     <Compile Include="Models\Patient.cs" />
     <Compile Include="Models\Room.cs" />
     <Compile Include="Models\Turno.cs" />
@@ -246,6 +253,11 @@
     <Content Include="Views\Turnoes\Details.cshtml" />
     <Content Include="Views\Turnoes\Edit.cshtml" />
     <Content Include="Views\Turnoes\Index.cshtml" />
+    <Content Include="Views\Facturas\Create.cshtml" />
+    <Content Include="Views\Facturas\Delete.cshtml" />
+    <Content Include="Views\Facturas\Details.cshtml" />
+    <Content Include="Views\Facturas\Edit.cshtml" />
+    <Content Include="Views\Facturas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -274,6 +286,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907181808512_Initial_Create_turnos.resx">
       <DependentUpon>201907181808512_Initial_Create_turnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907182324491_Initial_create_factura.resx">
+      <DependentUpon>201907182324491_Initial_create_factura.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

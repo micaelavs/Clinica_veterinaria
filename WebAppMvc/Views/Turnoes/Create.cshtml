@@ -1,19 +1,18 @@
 ﻿@model WebAppMvc.Models.Turno
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Alta Turnos";
 }
 
-<h2>Create</h2>
+<h2>Alta Turnos</h2>
 
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
-        <h4>Turno</h4>
-        <hr />
+    <div style="background:#ffd274;" class="form-horizontal">
+
         <div class="form-group">
             @Html.LabelFor(model => model.TipoEspecialidad,"Tipo Especialidad", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -32,7 +31,6 @@
             @Html.LabelFor(model => model.IdPaciente, "Paciente", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("IdPaciente", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.IdPaciente, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -40,7 +38,6 @@
             @Html.LabelFor(model => model.IdSala, "Sala", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("IdSala", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.IdSala, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -48,7 +45,6 @@
             @Html.LabelFor(model => model.IdDoctor, "Doctor", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("IdDoctor", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.IdDoctor, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -56,22 +52,15 @@
             @Html.LabelFor(model => model.Hora, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Hora, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Hora, "", new { @class = "text-danger" })
             </div>
         </div>
-
+        <br />
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input style="border: 1px solid black; border-radius: 5px; width:170px;" type="submit" value="Alta" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+<br />
+<a style="font-weight:200; border-radius: 5px; background:#ffd274; text-decoration: none; color: black;" href="~/Turnoes/Index">VOLVER A LA LISTA PRINCIPAL</a>
