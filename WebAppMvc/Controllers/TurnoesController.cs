@@ -110,7 +110,11 @@ namespace WebAppMvc.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Turno turno = db.Turnos.Find(id);
+            Turno turno = db.Turnos.Find(id); //traigo el turno
+            turno.Doctor = db.Doctors.Find(turno.IdDoctor); //traigo el doctor
+            turno.Sala = db.Rooms.Find(turno.IdSala);
+            turno.Paciente = db.Patients.Find(turno.IdPaciente);
+             
             if (turno == null)
             {
                 return HttpNotFound();

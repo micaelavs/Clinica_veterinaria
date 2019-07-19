@@ -103,6 +103,7 @@ namespace WebAppMvc.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Factura factura = db.Facturas.Find(id);
+            factura.Turno = db.Turnos.Find(factura.IdTurno);
             if (factura == null)
             {
                 return HttpNotFound();
