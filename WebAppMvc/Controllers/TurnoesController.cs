@@ -52,18 +52,41 @@ namespace WebAppMvc.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,TipoEspecialidad,Fecha,IdPaciente,IdSala,IdDoctor,Hora")] Turno turno)
-        {
-            if (ModelState.IsValid)
+        {   
+            //todas las opciones están ocupadas
+            var turnoBuscado = from t in db.Turnos
+                               where t.IdPaciente == turno.IdPaciente &&
+                               t.IdSala == turno.IdSala &&
+                               t.IdDoctor == turno.IdDoctor &&
+                               t.TipoEspecialidad == turno.TipoEspecialidad &&
+                               t.Fecha == t.Fecha && t.Hora == turno.Hora
+                               select t;
+
+            if (turnoBuscado.Any())
             {
-                db.Turnos.Add(turno);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                ViewBag.Mensaje = "El turno ya fue seleccionado, seleccione otro diferente";
+
+                ViewBag.IdDoctor = new SelectList(db.Doctors, "Id", "Name", turno.IdDoctor);
+                ViewBag.IdPaciente = new SelectList(db.Patients, "Id", "Name", turno.IdPaciente);
+                ViewBag.IdSala = new SelectList(db.Rooms, "Id", "Name", turno.IdSala);
+                return View(turno);
             }
 
-            ViewBag.IdDoctor = new SelectList(db.Doctors, "Id", "Name", turno.IdDoctor);
-            ViewBag.IdPaciente = new SelectList(db.Patients, "Id", "Name", turno.IdPaciente);
-            ViewBag.IdSala = new SelectList(db.Rooms, "Id", "Name", turno.IdSala);
-            return View(turno);
+       
+            if (ModelState.IsValid)
+                {
+                    db.Turnos.Add(turno);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+
+                ViewBag.IdDoctor = new SelectList(db.Doctors, "Id", "Name", turno.IdDoctor);
+                ViewBag.IdPaciente = new SelectList(db.Patients, "Id", "Name", turno.IdPaciente);
+                ViewBag.IdSala = new SelectList(db.Rooms, "Id", "Name", turno.IdSala);
+                return View(turno);
+            
+
+            
         }
 
         // GET: Turnoes/Edit/5

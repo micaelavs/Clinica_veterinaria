@@ -9,6 +9,9 @@
 <table style='background:#ffd274; width: 100%;' class="table">
     <thead>
         <tr>
+            <th style="text-align:left; border-bottom: 1px solid black" ;>
+                Codigo Turno
+            </th>
             <th style="text-align:left; border-bottom: 1px solid black";>
                 Doctor
             </th>
@@ -34,6 +37,9 @@
         @foreach (var item in Model)
         {
             <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Doctor.Name)
                 </td>
